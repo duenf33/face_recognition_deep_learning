@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/fernandoduenas/Documents/code-immersives/MAY_16_1022-DOM/final_project/face_recognition_deep_learning'
+make: Leaving directory `/Users/fernandoduenas/Documents/code-immersives/MAY_16_1022-DOM/final_project/face_recognition_deep_learning'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

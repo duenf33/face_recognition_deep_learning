@@ -1,3 +1,4 @@
 .env
 ./dataset/*
 encoding.pickle
+xyz_sample_testing

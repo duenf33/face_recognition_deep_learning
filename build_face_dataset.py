@@ -5,7 +5,10 @@ import time
 import cv2
 import os
 
-ap = argparse.ArgumentParser()
+ap = argparse.ArgumentParser(description="""
+Ex: 
+❯ python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/fernando
+""")
 ap.add_argument("-c", "--cascade", required=True, help = "path to where the face cascade resides")
 ap.add_argument("-o", "--output", required=True, help="path to output directory")
 args = vars(ap.parse_args())

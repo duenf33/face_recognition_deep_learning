@@ -4,7 +4,10 @@ import pickle
 import cv2
 # import pandas as pd
 
-ap = argparse.ArgumentParser()
+ap = argparse.ArgumentParser(description="""
+Ex:
+❯ python recognize_faces_image.py --encodings encodings_jd.pickle --image examples/Jenny/jd09.jpg
+""")
 ap.add_argument("-e", "--encodings", required=True,
                 help="path to serialized db of facial encodings")
 ap.add_argument("-i", "--image", required=True,
@@ -12,7 +15,10 @@ ap.add_argument("-i", "--image", required=True,
 ap.add_argument("-d", "--detection-method", type=str, default="cnn",
                 help="face detection model to use: either `hog` or `cnn`")
 args = vars(ap.parse_args())
-
+"""
+Ex:
+❯ python recognize_faces_image.py --encodings encodings_jd.pickle --image examples/Jenny/jd09.jpg
+"""
 # load the known faces
 print("[INFO] loading encodings...")
 data = pickle.loads(open(args["encodings"], "rb").read())

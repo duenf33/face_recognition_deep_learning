@@ -6,12 +6,16 @@ import pickle
 import time
 import cv2
 
-ap = argparse.ArgumentParser()
+ap = argparse.ArgumentParser(description="""
+Ex:
+❯ python recognize_faces_video.py --encodings encodings_fernando.pickle --output output/first_video_2.avi --display 1
+""")
 ap.add_argument("-e", "--encodings", required=True, help="path to serialized db of facial encodings")
 ap.add_argument("-o", "--output", type=str, help="path to output video")
 ap.add_argument("-y", "--display", type=int, default=1, help="whether or not to display output frame to screen")
 ap.add_argument("-d", "--detection-method", type=str, default="cnn", help="face detection model to use: either `hog` or `cnn`")
 args = vars(ap.parse_args())
+
 # Load known faces and embeddings.
 print("[INFO] loading encodings...")
 data = pickle.loads(open(args["encodings"], "rb").read())

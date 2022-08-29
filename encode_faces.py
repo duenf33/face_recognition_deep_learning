@@ -5,7 +5,10 @@ import pickle
 import cv2
 import os
 
-ap = argparse.ArgumentParser()
+ap = argparse.ArgumentParser(description="""
+Ex:
+❯ python encode_faces.py --dataset dataset/fernando --encodings enconding_fernando.pickle
+""")
 ap.add_argument("-i", "--dataset", required=True, help="path to input directory of faces + images")
 ap.add_argument("-e", "--encodings", required=True, help="path to serialized db of facial encodings")
 ap.add_argument("-d", "--detection-method", type=str, default="cnn", help="face detection model to use: either `hog` or `cnn`")
